@@ -25,6 +25,9 @@ RUN apt-get install -y build-essential \
 	libfftw3-dev sox libsox-dev libsox-fmt-all \
 	libopenblas-dev
 
+# Install libreadline-dev so that trepl can be built.
+RUN apt-get install -y libreadline-dev
+
 RUN pip install "ipython[notebook]"
 
 RUN git clone https://github.com/torch/distro.git ~/torch --recursive
